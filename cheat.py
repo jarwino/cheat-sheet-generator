@@ -1,6 +1,7 @@
 import sys, math
 from subprocess import Popen, PIPE
 from PIL import Image
+from io import BytesIO
 
 def __parse_pdftoppm_buffer(data):
     images = []
