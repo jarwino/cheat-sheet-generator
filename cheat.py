@@ -35,4 +35,4 @@ for i in range(num_pages):
 
         im += 1
 
-    new_im.save('page' + str(i) + '.png')
+    new_im.save('page' + str(i + 1) + '.png')
