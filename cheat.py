@@ -3,6 +3,10 @@ from subprocess import Popen, PIPE
 from PIL import Image
 from io import BytesIO
 
+'''
+The following 2 functions are from the pdf2image library (https://github.com/Belval/pdf2image)
+'''
+
 def __parse_pdftoppm_buffer(data):
     images = []
 
@@ -16,10 +20,6 @@ def __parse_pdftoppm_buffer(data):
         index += file_size
 
     return images
-
-def __load_from_output_folder(output_folder):
-    return [Image.open(os.path.join(output_folder, f)) for f in sorted(os.listdir(output_folder))]
-
 
 def convert_from_path(pdf_path, dpi=200, output_folder=None):
     """
@@ -45,6 +45,9 @@ def convert_from_path(pdf_path, dpi=200, output_folder=None):
     else:
         return __parse_pdftoppm_buffer(data)
 
+'''
+</end library code>
+'''
 
 images = convert_from_path(sys.argv[1])
 widths, heights = zip(*(i.size for i in images))

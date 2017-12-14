@@ -2,7 +2,6 @@
 Generate cheat sheets automatically from a pdf file.
 
 ## Usage
-`pip install pdf2image`
 
 You want to have `pdftoppm` on your system. One way to acquire it is to install the `poppler` library:
 
