@@ -82,7 +82,7 @@ for i in range(num_pages):
 
         im += 1
 
-    new_im.save('page' + str(i + 1) + '.pdf', "PDF", resolution=100.0)
+    new_im.save(sys.argv[4] + "_" + str(i + 1) + '.pdf', "PDF", resolution=100.0)
 
 
 
